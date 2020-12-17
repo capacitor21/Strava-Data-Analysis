@@ -1,3 +1,3 @@
 # Strava-Data-Analysis
-Analysis of my strava biking, running, and hiking activities using pandas and the Strava api
+Analysis of my Strava biking, running, and hiking activities using Pandas and the Strava API
 
