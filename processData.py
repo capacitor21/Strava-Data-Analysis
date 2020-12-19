@@ -15,6 +15,7 @@ import decoder
     #make new request
 if not os.path.exists("myActivities.json"):
     getActivities.getLastest()
+    print("Getting latest activities")
 elif os.path.getctime("myActivities.json"):
     print() 
 
@@ -34,3 +35,14 @@ for activity in data:
         folium.PolyLine(decoded).add_to(map) #add the line to the mao
 
 map.save('./map.html')
+
+df = pd.json_normalize(data)
+
+print(df.head())
+print(df[df['type'] == 'Ride'].mean())
+
+distance = df[df['type'] == 'Ride']['distance']
+
+distance.plot()
+
+
